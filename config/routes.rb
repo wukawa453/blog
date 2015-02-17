@@ -5,4 +5,5 @@
   end
   root 'posts#index'
   get 'posts/new' => 'posts#new'
+  get '/about' => "pages#about"
 end
