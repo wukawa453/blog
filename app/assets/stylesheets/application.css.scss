@@ -14,8 +14,12 @@
  *= require_self
  */
 
- @import 'normalize';
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
 
+ @import 'normalize';
+ body { padding-top: 70px; }
+/*
  html, body {
    font-family: 'Raleway', sans-serif;
  }
@@ -264,3 +268,4 @@
      }
    }
  }
+*/
