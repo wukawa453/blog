@@ -5,17 +5,18 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= favicon_link_tag 'images/logo.png' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <%= render 'layouts/shim' %>
   <%= render 'layouts/header' %>
-  <% flash.each do |name, msg|%>
-    <%= content_tag(:div, msg, class:"alert") %>
-  <% end %>
-
+  <br>
   <div class="container">
     <div class="row">
+      <% flash.each do |name, msg|%>
+        <%= content_tag(:div, msg, class:"alert alert-#{name} #{name}") %>
+      <% end %>
 
       <div class="col-md-8 col-sm-8">
         <h1 class="page-header">
@@ -29,6 +30,11 @@
     </div>
     <!-- end of content container -->
   </div>
+
+  <footer class="footer">
+    <br>
+    <p class="text-center">Copyright <span class="glyphicon glyphicon-copyright-mark"></span> <%= link_to "Hi-Lux, Inc.", "http://www.hi-luxoptics.com" %> 2015 </p>
+  </footer>
 
 </body>
 </html>
