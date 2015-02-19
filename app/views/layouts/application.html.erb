@@ -8,14 +8,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <%= render 'layouts/shim' %>
+  <%= render 'layouts/header' %>
+  <% flash.each do |name, msg|%>
+    <%= content_tag(:div, msg, class:"alert") %>
+  <% end %>
+
   <div class="container">
-    <%= render 'layouts/header' %>
-    <% flash.each do |name, msg|%>
-      <%= content_tag(:div, msg, class:"alert") %>
-    <% end %>
-    <div class="container">
-      <%= yield %>
+    <div class="row">
+
+      <div class="col-md-8 col-sm-8">
+        <h1 class="page-header">
+          Leatherwood Hi-Lux <small>Blog & Industrial Commentary</small>
+        </h1>
+        <%= yield %>
+      </div>
+
+      <%= render 'layouts/well' %>
+      <!-- end of content row -->
     </div>
+    <!-- end of content container -->
   </div>
 
 </body>

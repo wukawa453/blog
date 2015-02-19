@@ -18,8 +18,9 @@
  @import "bootstrap";
 
  @import 'normalize';
- body { padding-top: 70px; }
-/*
+ body { padding-top: 80px; }
+
+
  html, body {
    font-family: 'Raleway', sans-serif;
  }
@@ -32,7 +33,11 @@
    text-decoration: none;
    color: inherit;
  }
+/*
 
+@media screen and (max-width: 768px) {
+  body { padding-top: 25px; }
+}
 //Nesting/Styling for sidebar
  #sidebar {
    width: 250px;
