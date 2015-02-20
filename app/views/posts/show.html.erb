@@ -1,11 +1,11 @@
 <% provide(:title, "#{@post.title}") %>
 <div class="span8 clearfix">
 
-  <h1>
+  <h1 class="font-bold">
     <%= @post.title %>
   </h1>
   <p class="date">
-    Submitted <%= time_ago_in_words(@post.created_at) %> Ago
+    Posted <%= time_ago_in_words(@post.created_at) %> Ago
     <% if user_signed_in? %>
       | <%= link_to "Edit", edit_post_path(@post) %>
       | <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -15,8 +15,8 @@
   <p class="body"><%= @post.body%><p>
 
   <hr>
-  <div class="span8">
-    <h2> <%= pluralize(@post.comments.count, "comments") %></h2>
+  <div class="span8" name="comments">
+    <h2> <%= pluralize(@post.comments.count, "comment") %></h2>
     <%= render @post.comments %>
     <h3>Add a comment:</h3>
     <%= render 'comments/form' %>
