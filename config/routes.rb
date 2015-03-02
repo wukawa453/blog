@@ -1,4 +1,5 @@
   Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   get 'registrations/sign_up_params'
 
   get 'registrations/account_update_params'

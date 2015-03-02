@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/galetahub/ckeditor.git
+  revision: 96c2ba8602154a7d46c4c95952550ae638503396
+  specs:
+    ckeditor (4.1.1)
+      cocaine
+      orm_adapter (~> 0.5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -191,6 +199,7 @@ DEPENDENCIES
   autoprefixer-rails
   bootstrap-sass (~> 3.3.3)
   byebug
+  ckeditor!
   coffee-rails (~> 4.1.0)
   devise
   guard-minitest

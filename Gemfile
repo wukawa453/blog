@@ -9,7 +9,8 @@ gem 'pg'
 gem 'paperclip', '~>4.2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-
+#for WYSIWYG editor
+gem 'ckeditor', github: 'galetahub/ckeditor'
 #Use bootstrap styling system
 gem 'bootstrap-sass', '~> 3.3.3'
 # Use Uglifier as compressor for JavaScript assets
