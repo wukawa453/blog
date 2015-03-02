@@ -11,8 +11,13 @@
       | <%= link_to "Delete", post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>
   </p>
-
+  <% if @post.post_image.exists? %>
+    <%= image_tag @post.post_image.url(:default), alt:"#{@post.title}", class:"img-responsive" %>
+  <% else %>
+    <%= image_tag "logo.png", class:"img-responsive", width:"600px", alt:"#{@post.title}" %>
+  <% end %>
   <p class="body"><%= @post.body %><p>
+
 
   <hr>
   <div class="span8" name="comments">
