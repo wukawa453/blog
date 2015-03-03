@@ -17,11 +17,11 @@
 
 <div class="form-group">
   <%= f.label :body %><br>
-  <%= f.cktext_area :body, class: "form-control", rows: 20 %>
+  <%= f.cktext_area :body, class: "form-control", columns: 30 %>
 </div>
 <div class="form-group">
   <%= f.label "Upload an Image for the Post" %>
-  <%= f.file_field :post_image %>
+  <%= f.file_field :post_image, default: @post.post_image %>
 </div>
 <%= f.submit "Submit Post", class:"btn btn-primary btn-block" %>
 <% end %>
