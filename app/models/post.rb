@@ -12,7 +12,7 @@ class Post < ActiveRecord::Base
   validates_attachment_content_type :post_image, :content_type => /\Aimage\/.*\Z/
 
   def self.text_search(query)
-    if query
+    if query.present?
       where("title @@ :q or body @@ :q", q: "#{query}")
     else
       Post.all.order('created_at DESC')
