@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except:[:index, :show]
 
   def index
-    @posts = Post.all.order('created_at DESC').page(params[:page]).per_page(10)
+    #@posts = Post.all.order('created_at DESC').page(params[:page]).per_page(4)
+    @posts = Post.text_search(params[:query]).page(params[:page]).per_page(3)
   end
 
   def new

@@ -6,7 +6,7 @@
   <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <%= javascript_include_tag 'fb.js.coffee'%>
+  <!-- <%= javascript_include_tag 'fb.js.coffee'%> -->
 </head>
 <body>
   <%= render 'layouts/shim' %>
@@ -31,6 +31,7 @@
     </div>
     <!-- end of content container -->
   </div>
+  <%= render 'layouts/footer' %>
 
 </body>
 </html>

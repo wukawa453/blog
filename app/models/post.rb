@@ -8,6 +8,14 @@ class Post < ActiveRecord::Base
                     :url => "/assets/posts/:id/:style/:basename.:extension",
                     :path => "/:rails_root/public/assets/posts/:id/:style/:basename.:extension"
   validates_attachment_presence :post_image
-  validates_attachment_size :post_image, :less_than => 5.megabytes
+  validates_attachment_size :post_image, :less_than => 3.megabytes
   validates_attachment_content_type :post_image, :content_type => /\Aimage\/.*\Z/
+
+  def self.text_search(query)
+    if query
+      where("title @@ :q or body @@ :q", q: "#{query}")
+    else
+      Post.all.order('created_at DESC')
+    end
+  end
 end

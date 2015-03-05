@@ -1,5 +1,4 @@
 <%provide(:title, "All Posts") %>
-<%= will_paginate @posts %>
 <% @posts.each do |post| %>
   <div class="post_wrapper">
     <h2>
@@ -10,10 +9,16 @@
       by <%= full_name(post.user_id) %>
     </p>
     <% if post.post_image.exists? %>
-      <%= image_tag post.post_image.url(:default) %>
+       <%= link_to post_path(post) do %>
+         <%= image_tag post.post_image.url(:default), alt:"#{post.title}" %>
+       <% end %>
     <% else %>
       <%= image_tag "logo.png", class:"img-responsive", width:"600px", alt:"#{post.title}" %>
     <% end %>
-    <br>
+    <br><hr>
   </div>
 <% end %>
+  <div class="digg_pagination">
+    <%= will_paginate @posts, :container => false %>
+</div>
+<br>
