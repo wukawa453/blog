@@ -15,32 +15,27 @@
   </div>
 
   <!-- well for archived articles and widgets -->
-  <div class="well">
-    <div class="row">
-      <div class="col-lg-6">
-        <ul class="list-unstyled">
-          <li><%= link_to "January 2015", "#" %></li>
-          <li><%= link_to "February 2015", "#" %></li>
-          <li><%= link_to "March 2015", "#" %></li>
-          <li><%= link_to "April 2015", "#" %></li>
-          <li><%= link_to "May 2015", "#" %></li>
-          <li><%= link_to "June 2015", "#" %></li>
-        </ul>
-      </div>
-
-      <div class="col-lg-6">
-        <ul class="list-unstyled">
-          <li><%= link_to "July 2015", "#" %></li>
-          <li><%= link_to "August 2015", "#" %></li>
-          <li><%= link_to "September 2015", "#" %></li>
-          <li><%= link_to "October 2015", "#" %></li>
-          <li><%= link_to "November 2015", "#" %></li>
-          <li><%= link_to "December 2015", "#" %></li>
-        </ul>
-      </div>
+  <div class="well well-lg">
+    <div class="span4 archive">
+      <h3> Blog Archive </h3>
+      <!-- add master ul list for each month -->
+      <ul>
+        <!-- start of the archive -->
+        <% @posts_months.sort.reverse.each do |month, posts_by_month| %>
+          <li>
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><h4> <%= month.strftime("%B %Y") %> </h4><span class="caret"></span></a>
+            <ul class="dropdown" role="menu">
+              <% for post in posts_by_month %>
+                <li> <%= link_to post.title, post %> </li>
+              <% end %>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
     </div>
-    <!--end of archive row -->
   </div>
+    <!--end of archive row -->
+
 
   <!-- widget well -->
   <div class="well well-sm">

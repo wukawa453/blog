@@ -22,6 +22,7 @@ module Blog
 
     # Use SQL instead of Active Record's schema dumper when creating db
     config.active_record.schema_format = :sql
+    config.serve_static_assets = true
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
