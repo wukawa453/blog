@@ -11,6 +11,8 @@ gem 'pg'
 gem 'paperclip', '~>4.2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+# For Full Text Searching in PG
+gem 'pg_search'
 #for WYSIWYG editor
 gem 'ckeditor', github: 'galetahub/ckeditor'
 #Use bootstrap styling system
