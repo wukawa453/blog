@@ -38,6 +38,7 @@
           <li> <%= link_to '<i class="fa fa-file-text-o"></i> New Post'.html_safe, new_post_path, class:"btn navbar-btn" %> </li>
           <% end %>
           <!-- signed in but not admin -->
+          <li> <%= link_to '<i class="fa fa-cogs"></i> Account Settings'.html_safe, edit_user_registration_path, class:"btn navbar-btn" %> </li>
           <li><%= link_to '<i class="fa fa-sign-out"></i> Log Out'.html_safe, destroy_user_session_path, method: :delete, class:"btn navbar-btn"%></li>
         <% elsif !user_signed_in? %>
           <li><%= link_to '<i class="fa fa-sign-in"></i> Login'.html_safe, new_user_session_path, class:"btn navbar-btn" %></li>

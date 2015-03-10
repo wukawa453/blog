@@ -1,6 +1,24 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Setting up production host link
+  config.action_mailer.default_url_options = { host: 'boiling-beyond-8903.herokuapp.com/'}
+
+  # Mailer outgoing server setup
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => 'utf-8'
+
+  config.action_mailer.smtp_settings {
+    address: "smtp.hi-luxoptics.com",
+    port: 2525,
+    domain: ENV["HILUX_DOMAIN"],
+    authentication: "plain",
+    enable_startIs_auto: true,
+    user_name: ENV["INFO_USERNAME"],
+    password: ENV["INFO_PASSWORD"]
+  }
   # Code is not reloaded between requests.
   config.cache_classes = true
 
