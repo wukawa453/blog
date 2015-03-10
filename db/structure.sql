@@ -222,7 +222,11 @@ CREATE TABLE users (
     updated_at timestamp without time zone,
     first_name character varying,
     last_name character varying,
-    admin boolean DEFAULT false
+    admin boolean DEFAULT false,
+    confirmation_token character varying,
+    confirmed_at timestamp without time zone,
+    confirmation_sent_at timestamp without time zone,
+    unconfirmed_email character varying
 );
 
 
@@ -428,4 +432,6 @@ INSERT INTO schema_migrations (version) VALUES ('20150302164050');
 INSERT INTO schema_migrations (version) VALUES ('20150305222546');
 
 INSERT INTO schema_migrations (version) VALUES ('20150306001715');
+
+INSERT INTO schema_migrations (version) VALUES ('20150310162314');
 
