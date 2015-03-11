@@ -1,14 +1,19 @@
-<%= form_for([@post, @post.comments.build], class:"form-horizontal") do |f| %>
-
-    <div class="form-group">
-      <%= f.label :name %>
-      <%= f.text_field :name, class:"form-control"%>
-    </div>
-    <div class="form-group">
-      <%= f.label :body, "Comment" %>
-      <%= f.text_area :body, class:"form-control input-lg" %>
-    </div>
-
-    <%= f.submit class: "btn btn-primary btn-block" %>
-  </p>
-<% end %>
+<div class="span8">
+  <%= form_for([@post, @post.comments.build], class:"form-horizontal") do |f| %>
+    <% if user_signed_in? %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class:"form-control"%>
+      </div>
+      <div class="form-group">
+        <%= f.label :body, "Comment" %>
+        <%= f.text_area :body, class:"form-control input-lg" %>
+      </div>
+      <%= f.submit class: "btn btn-primary btn-block" %>
+    <% else %>
+    <p>
+      <em>Please sign in to leave a comment.</em>
+    </p>
+    <% end %>
+  <% end %>
+</div>
