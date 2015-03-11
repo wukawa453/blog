@@ -10,23 +10,14 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default :charset => 'utf-8'
 
-  #Configuring MailTrap
-  require 'rubygems' if RUBY_VERSION < '1.9'
-  require 'rest_client'
-  require 'json'
-
-  response = RestClient::Resource.new("https://mailtrap.io/api/v1/inboxes.json?api_token=ENV['MAILTRAP_API_TOKEN']", ssl_version: "TLSv1").get
-
-  first_inbox = JSON.parse(response)[0]
-
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.smtp_settings = {
-  :user_name => first_inbox['username'],
-  :password => first_inbox['password'],
-  :address => first_inbox['domain'],
-  :domain => first_inbox['domain'],
-  :port => first_inbox['smtp_ports'][0],
-  :authentication => :plain
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :user_name => '31291afcfbd29876f',
+    :password => 'e6f1f663a192a4',
+    :address => 'mailtrap.io',
+    :domain => 'mailtrap.io',
+    :port => '2525',
+    :authentication => :cram_md5
   }
 
   #config.action_mailer.smtp_settings {
