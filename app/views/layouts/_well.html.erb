@@ -5,10 +5,8 @@
     <div class="input-group">
       <!-- This is the search bar -->
       <%= form_tag posts_path, method: :get do%>
-        <p>
-          <%= text_field_tag :query, params[:query], class: "form-control", placeholder:"Search Hi-Lux Blog Posts" %>
-          <%= submit_tag "Search", name: nil, class:"btn btn-default" %>
-        </p>
+        <%= text_field_tag :query, params[:query], class: "form-control", placeholder:"Search Hi-Lux Blog Posts" %>
+        <span class"input-group-btn"><%= submit_tag "Search", name: nil, class:"btn btn-info form-control" %></span>
       <% end %>
       <!-- end search bar -->
     </div>
