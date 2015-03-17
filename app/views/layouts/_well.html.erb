@@ -2,11 +2,11 @@
 
   <!-- Search Bar -->
   <div class="well well-padding">
-    <div class="input-group">
+    <div class="span4">
       <!-- This is the search bar -->
       <%= form_tag posts_path, method: :get do%>
-        <%= text_field_tag :query, params[:query], class: "form-control", placeholder:"Search Hi-Lux Blog Posts" %>
-        <span class"input-group-btn"><%= submit_tag "Search", name: nil, class:"btn btn-info form-control" %></span>
+        <%= text_field_tag :query, params[:query], class: "form-control link-style", placeholder:"Search Hi-Lux Blog Posts..." %>
+        <span><%= submit_tag "Search", name: nil, class:"btn btn-info form-control" %></span>
       <% end %>
       <!-- end search bar -->
     </div>
@@ -15,19 +15,20 @@
   <!-- well for archived articles and widgets -->
   <div class="well well-lg">
     <div class="span4 archive">
-      <h3> Blog Archive </h3>
+      <h3 class="text-center"> Blog Archive </h3><br>
       <!-- add master ul list for each month -->
       <ul>
         <!-- start of the archive -->
         <% @posts_months.sort.reverse.each do |month, posts_by_month| %>
-          <li>
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><h4> <%= month.strftime("%B %Y") %> </h4><span class="caret"></span></a>
-            <ul class="dropdown" role="menu">
+          <li class="dropdown" style="list-style:none;">
+            <a href="#" class="dropdown-toggle btn btn-xs btn-primary" data-toggle="dropdown" role="button" aria-expanded="false"><h4> <%= month.strftime("%B %Y") %> <span class="caret"></span></h4></a>
+            <ul class="dropdown-menu" role="menu">
               <% for post in posts_by_month %>
                 <li> <%= link_to post.title, post %> </li>
               <% end %>
             </ul>
           </li>
+          <br>
         <% end %>
       </ul>
     </div>
@@ -37,7 +38,7 @@
 
   <!-- widget well -->
   <div class="well well-sm">
-    <h3>Follow Us on Social Media!</h3>
+    <h3 class="text-center">Follow Us on Social Media!</h3><br>
     <div class="fb-follow" data-href="https://www.facebook.com/LeatherwoodHiLuxOptics" data-colorscheme="light" data-layout="standard" width="200" data-show-faces="true"></div>
     <br>
     <div class="span4">
