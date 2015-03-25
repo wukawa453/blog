@@ -12,12 +12,13 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :user_name => '31291afcfbd29876f',
-    :password => 'e6f1f663a192a4',
-    :address => 'mailtrap.io',
-    :domain => 'mailtrap.io',
-    :port => '2525',
-    :authentication => :cram_md5
+    :user_name => ENV["SENDGRID_USERNAME"],
+    :password => ENV["SENDGRID_PASSWORD"],
+    :address => 'smtp.sendgrid.net',
+    :domain => 'heroku.com',
+    :port => '587',
+    :authentication => :plain
+    :enable_starttls_auto => true
   }
 
   #config.action_mailer.smtp_settings {
