@@ -1,49 +1,50 @@
-<div class="col-md-4 col-sm-4">
-
-  <!-- Search Bar -->
-  <div class="well well-padding">
-    <div class="span4">
-      <!-- This is the search bar -->
-      <%= form_tag posts_path, method: :get do%>
-        <%= text_field_tag :query, params[:query], class: "form-control link-style", placeholder:"Search Hi-Lux Blog Posts..." %>
-        <span><%= submit_tag "Search", name: nil, class:"btn btn-info form-control" %></span>
-      <% end %>
-      <!-- end search bar -->
-    </div>
-  </div>
-
-  <!-- well for archived articles and widgets -->
-  <div class="well well-lg">
-    <div class="span4 archive">
-      <h3 class="text-center"> Blog Archive </h3><br>
-      <!-- add master ul list for each month -->
-      <ul>
-        <!-- start of the archive -->
-        <% @posts_months.sort.reverse.each do |month, posts_by_month| %>
-          <li class="dropdown" style="list-style:none;">
-            <a href="#" class="dropdown-toggle btn btn-xs btn-primary" data-toggle="dropdown" role="button" aria-expanded="false"><h4> <%= month.strftime("%B %Y") %> <span class="caret"></span></h4></a>
-            <ul class="dropdown-menu" role="menu">
-              <% for post in posts_by_month %>
-                <li> <%= link_to post.title, post %> </li>
-              <% end %>
-            </ul>
-          </li>
-          <br>
+<div class="col-md-4 col-sm-4 span4">
+  <div class="affix-sidebar" data-spy="affix">
+    <!-- Search Bar -->
+    <div class="well well-padding">
+      <div class="span4">
+        <!-- This is the search bar -->
+        <%= form_tag posts_path, method: :get do%>
+          <%= text_field_tag :query, params[:query], class: "form-control link-style", placeholder:"Search Hi-Lux Blog Posts..." %>
+          <span><%= submit_tag "Search", name: nil, class:"btn btn-info form-control" %></span>
         <% end %>
-      </ul>
+        <!-- end search bar -->
+      </div>
     </div>
-  </div>
-    <!--end of archive row -->
+
+    <!-- well for archived articles and widgets -->
+    <div class="well well-lg">
+      <div class="span4 archive">
+        <h3 class="text-center"> Blog Archive </h3><br>
+        <!-- add master ul list for each month -->
+        <ul>
+          <!-- start of the archive -->
+          <% @posts_months.sort.reverse.each do |month, posts_by_month| %>
+            <li class="dropdown" style="list-style:none;">
+              <a href="#" class="dropdown-toggle btn btn-xs btn-primary" data-toggle="dropdown" role="button" aria-expanded="false"><h4> <%= month.strftime("%B %Y") %> <span class="caret"></span></h4></a>
+              <ul class="dropdown-menu" role="menu">
+                <% for post in posts_by_month %>
+                  <li> <%= link_to post.title, post %> </li>
+                <% end %>
+              </ul>
+            </li>
+            <br>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+      <!--end of archive row -->
 
 
-  <!-- widget well -->
-  <div class="well well-sm">
-    <h3 class="text-center">Follow Us on Social Media!</h3><br>
-    <div class="fb-follow" data-href="https://www.facebook.com/LeatherwoodHiLuxOptics" data-colorscheme="light" data-layout="standard" width="200" data-show-faces="true"></div>
-    <br>
-    <div class="span4">
-      <a href="https://twitter.com/HiLuxOptics" class="twitter-follow-button" data-show-count="false">Follow @HiLuxOptics</a>
+    <!-- widget well -->
+    <div class="well well-sm">
+      <h3 class="text-center">Follow Us on Social Media!</h3><br>
+      <div class="fb-follow" data-href="https://www.facebook.com/LeatherwoodHiLuxOptics" data-colorscheme="light" data-layout="standard" width="200" data-show-faces="true"></div>
+      <br>
+      <div class="span4">
+        <a href="https://twitter.com/HiLuxOptics" class="twitter-follow-button" data-show-count="false">Follow @HiLuxOptics</a>
+      </div>
     </div>
+    <!-- end of archive well -->
   </div>
-  <!-- end of archive well -->
 </div>
