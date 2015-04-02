@@ -14,21 +14,23 @@
   <%= render 'layouts/header' %>
   <%= render 'layouts/messages' %>
 
-  <div class="container">
-    <div class="row">
+  <div class="container" id="page_body">
+    <div id="content">
+      <div class="row">
 
-      <div class="col-md-8 col-sm-8">
-        <h1 class="page-header">
-          Leatherwood Hi-Lux <small>Blog & Industrial Commentary</small>
-        </h1>
-        <%= yield %>
+        <div class="col-md-8 col-sm-8">
+          <h1 class="page-header">
+            Leatherwood Hi-Lux <small>Blog & Industrial Commentary</small>
+          </h1>
+          <%= yield %>
+        </div>
+
+        <%= render 'layouts/well' %>
+        <script src="//platform.twitter.com/widgets.js"></script>
+        <!-- end of content row -->
       </div>
-
-      <%= render 'layouts/well' %>
-      <script src="//platform.twitter.com/widgets.js"></script>
-      <!-- end of content row -->
+      <!-- end of content container -->
     </div>
-    <!-- end of content container -->
   </div>
   <%= render 'layouts/footer' %>
 

@@ -10,7 +10,7 @@ $(function(){
 
             // let's save some messy code in clean variables
             // when should we start affixing? (the amount of pixels to the top from the element)
-            var fromTop = $( this ).offset().top,
+            var fromTop = 0, //$( this ).offset().top, don't want the search bar to go missing 
                 // where is the bottom of the element?
                 fromBottom = $( document ).height()-($( this ).offset().top + $( this ).outerHeight()),
                 // where should we stop? (the amount of pixels from the top where the bottom element is)
@@ -20,7 +20,7 @@ $(function(){
             // if the element doesn't need to get sticky, then skip it so it won't mess up your layout
             if( (fromBottom-stopOn) > 200 ){
                 // let's put a sticky width on the element and assign it to the top
-                $( this ).css('width', $( this ).width()).css('top', 0).css('position', '');
+                $( this ).css('width', $( this ).width()).css('top', 78).css('position', '');
                 // assign the affix to the element
                 $( this ).affix({
                     offset: {
@@ -30,7 +30,7 @@ $(function(){
                         bottom: stopOn
                     }
                 // when the affix get's called then make sure the position is the default (fixed) and it's at the top
-                }).on('affix.bs.affix', function(){ $( this ).css('top', 0).css('position', ''); });
+              }).on('affix.bs.affix', function(){ $( this ).css('top', 78).css('position', ''); });
             }
             // trigger the scroll event so it always activates
             $( window ).trigger('scroll');
