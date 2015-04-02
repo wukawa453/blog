@@ -170,12 +170,20 @@
   margin: 5px;
 }
 
-/*
+
 
 
 @media screen and (max-width: 768px) {
-  body { padding-top: 25px; }
+  body {
+    padding-top: 25px;  
+  }
+  .bs-docs-sidenav.affix {
+  position: static;
+  width: auto;
+  top: 0;
+  }
 }
+/*
 //Nesting/Styling for sidebar
  #sidebar {
    width: 250px;
