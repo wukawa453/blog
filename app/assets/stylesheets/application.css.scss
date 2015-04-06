@@ -21,14 +21,14 @@
 
  @import 'normalize';
  #page_body { padding-top: 80px;
-        background-image: url('subtle_surface_@2X.png');
- }
+              background-color:white;}
  #content {
    color:rgba(0,0,0,.67)
  }
 
  html, body {
    font-family: 'Raleway', sans-serif;
+   background-image: url('subtle_surface_@2X.png');
  }
 
  h1, h2, h3, h4, h5, h6 {
@@ -175,7 +175,7 @@
 
 @media screen and (max-width: 768px) {
   body {
-    padding-top: 25px;  
+    padding-top: 25px;
   }
   .bs-docs-sidenav.affix {
   position: static;
