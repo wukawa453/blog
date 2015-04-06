@@ -20,7 +20,7 @@ $(function(){
                 stopOn = $( document ).height()-( $( bottomElement ).offset().top)+($( this ).outerHeight() - $( this ).height());
 
             // if the element doesn't need to get sticky, then skip it so it won't mess up your layout
-            if( (fromBottom-stopOn) > 200 ){
+            if( (fromBottom-stopOn) > 0 ){
                 // let's put a sticky width on the element and assign it to the top
                 $( this ).css('width', $( this ).width()).css('top', $(navbarHeight)).css('position', '');
                 // assign the affix to the element
