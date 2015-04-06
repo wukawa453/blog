@@ -29,6 +29,7 @@
  html, body {
    font-family: 'Raleway', sans-serif;
    background-image: url('subtle_surface_@2X.png');
+   padding-bottom: 10px;
  }
 
  h1, h2, h3, h4, h5, h6 {
@@ -96,7 +97,7 @@
 }
 
 .digg_pagination {
-  background-image: url('subtle_surface_@2X.png');
+  background-color: white;
   cursor: default;
   /* self-clearing method: */ }
   .digg_pagination a, .digg_pagination span, .digg_pagination em {
