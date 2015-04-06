@@ -1,11 +1,11 @@
 <%provide(:title, "About") %>
 <div id="page_wrapper">
-  <div id="span8">
+  <div class="center-block text-center span8">
     <h2>Welcome to the Leatherwood Hi-Lux Blog!</h2>
-    <h3>Please check back periodically for compelling commentaries, the latest news and updates from Leatherwood Hi-Lux.</h3>
-    <h4>See a typo/mistake? Please report it to <a href="mailto:info@hi-luxoptics.com">info@hi-luxoptics.com</a></h4>
-    <p>
-      Visit our website @ <%= link_to 'www.hi-luxoptics.com', 'http://www.hi-luxoptics.com' %>
-    </p>
+    <h4>Please check back periodically for compelling commentaries, the latest news and updates from Leatherwood Hi-Lux.</h4><br>
+    <h4>Visit our website: <%= link_to 'http://www.hi-luxoptics.com' do%>
+      <%= image_tag 'logo.png', alt:"Leatherwood Hi-Lux", class:"img-responsive center-block", width:"70%" %>
+    <% end %></h4>
+    <h4>We Lead the Way.&#8482;</h4>
   </div>
 </div>

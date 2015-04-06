@@ -22,7 +22,7 @@ $(function(){
             // if the element doesn't need to get sticky, then skip it so it won't mess up your layout
             if( (fromBottom-stopOn) > 0 ){
                 // let's put a sticky width on the element and assign it to the top
-                $( this ).css('width', $( this ).width()).css('top', $(navbarHeight)).css('position', '');
+                $( this ).css('width', $( this ).width()).css('top', $(navbarHeight)+20).css('position', '');
                 // assign the affix to the element
                 $( this ).affix({
                     offset: {
@@ -32,7 +32,7 @@ $(function(){
                         bottom: stopOn
                     }
                 // when the affix get's called then make sure the position is the default (fixed) and it's at the top
-              }).on('affix.bs.affix', function(){ $( this ).css('top', $(navbarHeight)).css('position', ''); });
+              }).on('affix.bs.affix', function(){ $( this ).css('top', $(navbarHeight)+20).css('position', ''); });
             }
             // trigger the scroll event so it always activates
             $( window ).trigger('scroll');
