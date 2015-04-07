@@ -1,6 +1,9 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Set up Amazon S3 as the asset host
+  config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
+
   # Setting up production host link
   config.action_mailer.default_url_options = { host: 'boiling-beyond-8903.herokuapp.com/'}
 
@@ -49,6 +52,9 @@ Rails.application.configure do
   # NGINX, varnish or squid.
   # config.action_dispatch.rack_cache = true
 
+  #Depend on configuration from initializers
+  config.assets.initialize_on_precompile = true
+
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.serve_static_files = true
@@ -60,9 +66,13 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
 
+  config.assets.enabled = true
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
+
+  #prefix S3 asset files so that they are stored in folder
+  config.assets.prefix = "/production/assets"
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
