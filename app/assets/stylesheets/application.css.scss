@@ -29,7 +29,7 @@
 
  html, body {
    font-family: 'Raleway', sans-serif;
-   background-image: url('subtle_surface_@2X.png');
+   background-image: image-url('subtle_surface_@2X.png');
    padding-bottom: 10px;
  }
 
@@ -135,7 +135,7 @@
 
 .bottom {
     padding: 20px 0;
-    background-image: url('slash_it@2X.png');
+    background-image: image-url('slash_it@2X.png');
     .container { min-height: 150px;
       h3, h4, h5 {
         color: white;}
@@ -160,7 +160,7 @@
 }
 
 .navbar-color {
-  background-image: url('slash_it@2X.png');
+  background-image: image-url('slash_it@2X.png');
 }
 
 .link-style {
