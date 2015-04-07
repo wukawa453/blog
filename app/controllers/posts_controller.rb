@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     #@posts = Post.all.order('created_at DESC').page(params[:page]).per_page(4)
-    @posts = Post.text_search(params[:query]).page(params[:page]).per_page(3)
+    @posts = Post.text_search(params[:query]).page(params[:page]).per_page(6)
   end
 
   def new
