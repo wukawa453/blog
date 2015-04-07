@@ -1,8 +1,18 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Setting up Cloudfront CDN for both http and https
+  config.action_controller.asset_host = ->(source, request=nil, *_){
+    if request && request.ssl?
+      ENV['CLOUDFRONT_ENDPOINT_SECURE']
+    else
+      ENV['CLOUDFRONT_ENDPOINT']
+    end
+  }
+
+
   # Set up Amazon S3 as the asset host
-  config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
+  #config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
 
   # Setting up production host link
   config.action_mailer.default_url_options = { host: 'boiling-beyond-8903.herokuapp.com/'}
