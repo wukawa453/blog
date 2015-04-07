@@ -6,8 +6,10 @@ gem "fog", "~>1.20", require:"fog/aws/storage"
 gem "asset_sync"
 # Adding Font-Awesome
 gem 'font-awesome-sass'
+# Social Sharing Buttons
+gem 'awesome-share-buttons', github:'evansobkowicz/awesome-share-buttons'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
+gem 'rails', '~>4.2.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use Paperclip for attaching photos to Post models
