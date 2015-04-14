@@ -4,6 +4,8 @@ source 'https://rubygems.org'
 #gem "fog", "~>1.20", require:"fog/aws/storage"
 # Asset sync for external hosting of assets
 #gem "asset_sync"
+# Add font_assets to get font assets from different domains
+gem 'font_assets'
 # Adding Font-Awesome
 gem 'font-awesome-sass'
 # Social Sharing Buttons
